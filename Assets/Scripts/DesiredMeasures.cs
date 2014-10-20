@@ -10,10 +10,13 @@ public class DesiredMeasures : MonoBehaviour {
 	void Start () 
 	{
 		string myresult = "";
-		if(A_V == 0)
-			myresult = "Maximum Current Flow: " + max + "A\nMinimum Current Flow: " + min + "A";
-		else {
-			myresult = "Maximum Voltage: " + max + "V\nMinimum Voltage: " + min + "V";
+		if(gameObject.tag == "Test1" ||  gameObject.tag == "Test2" || gameObject.tag == "Test3")
+		{
+			if(A_V == 0)
+				myresult = "Maximum Current Flow: " + max + "A\nMinimum Current Flow: " + min + "A";
+			else {
+				myresult = "Maximum Voltage: " + max + "V\nMinimum Voltage: " + min + "V";
+		}
 		}
 		Description.pixelOffset = new Vector2 (transform.position.x , transform.position.z - 3) * 10;
 		Description.text = myresult;

@@ -7,28 +7,34 @@ public class PlayerMove : MonoBehaviour {
 	public GameObject LoseScreen;
 	public GameObject Play;
 	public GameObject P1;
+
+	public GUIText Island;
+
 	public GUIText Losing;
 	public GUIText HP;
 	public GUIText Button;
-	private int health;
+//	private int health;
 	public float voltage;
-	public GUIText PlayerInfo;
+//	public GUIText PlayerInfo;
 	bool started = false;
 	
 	public GameObject Spot1;
 	public GameObject Spot2;
 	public GameObject Spot3;
 //	public GameObject Spot4;
-	
+
+	public GUIText AV1, AV2, AV3;
 	
 
 	double current;
 	double R1, R2, R3, R4;
 	bool incomponent = false;
-	
+	int ratio;
+	public GUIText counter;
 	Vector3 movement = new Vector3 (0, 0, 100);
 	Vector3 translate = new Vector3(0,0,0);
-	
+	/*		Old Garbage Code, Probably Never Needed */
+	/*	
 	void updateHP(string ID)
 	{
 		int incr1 = 0;
@@ -58,7 +64,7 @@ public class PlayerMove : MonoBehaviour {
 			incr1 = -70;
 			incr2 = 0;
 		}
-		/*
+
 		if(!incomponent)
 		{
 			incomponent = true;
@@ -70,23 +76,25 @@ public class PlayerMove : MonoBehaviour {
 			incomponent = false;
 			voltage += incr2;
 			HP.text = "H: " + voltage.ToString () +"mV";
-		}*/
+		}
 	}
-	
+	*/
+
 	void Start()
 	{
 		HP.text = voltage.ToString ();
 		Losing.text = "YOU \n LOST!!!!";
-		health = 500;
-	//	voltage = 100;
-		Button.text = "BLAHAH";
-		PlayerInfo.pixelOffset = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.z ) *10;
-		PlayerInfo.text = "";
-		//	float forward = 10;
+
+		ratio = 10;
+
+		Button.text = "PLAY";
 		
 	}
+
 	void OnTriggerEnter(Collider other)
 	{
+		/* Old Garbage Code */
+		/*
 				if (other.gameObject.tag == "RN_ETrig") {
 						updateHP ("R");
 			
@@ -167,20 +175,18 @@ public class PlayerMove : MonoBehaviour {
 						rigidbody.AddForce (movement * speed * Time.deltaTime);
 				}
 		
-		
-		
+		*/
+						/*Hard Coded Path Triggers, Most Likely Will be Replaced by 10/20 */
+		/*
 				if (other.gameObject.tag == "STOP") {
 						movement = new Vector3 (-100, 0, 0);
 						rigidbody.AddForce (movement * speed * Time.deltaTime);
 				}
+				*/
 				if (other.gameObject.tag == "S_E") {
 
 						movement = new Vector3 (-100, 0, -100);
 						rigidbody.AddForce (movement * speed * Time.deltaTime);
-						other.gameObject.SetActive (false);
-						if (gameObject.tag == "Later") {
-								gameObject.SetActive (false);
-						}
 				}
 				if (other.gameObject.tag == "E_N") {
 						movement = new Vector3 (100, 0, -100);
@@ -195,13 +201,14 @@ public class PlayerMove : MonoBehaviour {
 						rigidbody.AddForce (movement * speed * Time.deltaTime);
 			
 				}
-		
+		/*
 				if (other.gameObject.tag == "Mob") {
 						LoseScreen.gameObject.SetActive (true);
 						Level.gameObject.SetActive (false);
 			
 				}
-		
+		*/
+					/* Not used right now but may use for diodes later */
 				if (other.gameObject.tag == "DStop") {
 			
 						if (!incomponent) {
@@ -213,6 +220,7 @@ public class PlayerMove : MonoBehaviour {
 				if (other.gameObject.tag == "DStart") {
 						incomponent = !incomponent;
 				}
+		/*
 				if (other.gameObject.tag == "Resistor1") {
 						if (gameObject.tag == "Player")
 								updateHP ("R1");
@@ -223,7 +231,12 @@ public class PlayerMove : MonoBehaviour {
 								updateHP ("R2");
 						incomponent = !incomponent;
 				}
-				if (other.gameObject.tag == "END") {
+				*/
+							//Destroy balls that finish route to prevent overflow of gameobjects
+				if (other.gameObject.tag == "END") 
+				{
+			Destroy (gameObject);
+
 			/*			if (voltage < 35) {
 								LoseScreen.gameObject.SetActive (true);
 								Level.gameObject.SetActive (false);
@@ -233,15 +246,30 @@ public class PlayerMove : MonoBehaviour {
 								Level.gameObject.SetActive (false);
 				
 						}*/
+			/*
 			Losing.text = "YOU WIN!!!!";
 			LoseScreen.gameObject.SetActive (true);
 			Level.gameObject.SetActive (false);
+			*/
 				}	
-				if (other.gameObject.tag == "Resist") {
-						//	other.gameObject.name = "100";
+						/* Reduce voltage when going through resistor */
+				if (other.gameObject.tag == "Resist") 
+				{
+						
 						voltage -= (float)current * stringtoint (other.gameObject.name);
-						HP.text = voltage.ToString ();
+					
+				}	
+							/*Slow down ball as traveling through resistor */
+						/******************************************* Evaluate Lost Speed based on Resistor ***********************************/
+				if(other.gameObject.tag == "ResistBox")
+				{
+					float xval = 0; 
+
+					movement = new Vector3 (20, 0, 0);
+					rigidbody.AddForce (movement * speed * Time.deltaTime);
 				}
+						/******************************************** HARD CODED, MUST ADAPT TO LEVEL *********************************************/
+							/*Set current for "Player" based on which path of parallel was taken */
 				if (other.gameObject.tag == "Branch1") 
 				{
 						current =  current * R3 / (R3 + R2);
@@ -250,9 +278,11 @@ public class PlayerMove : MonoBehaviour {
 				{
 						current =  current * R2 / (R3 + R2);
 				}
+
+						/* If current is out of acceptable range when this trigger is reached, you lose game */
 				if (other.gameObject.tag == "Test1") 
 				{
-					if(current < .8 || current > 1.2)
+					if(current <= .9 || current >= 1.2)
 					{
 						LoseScreen.gameObject.SetActive (true);
 						Level.gameObject.SetActive (false);
@@ -260,7 +290,7 @@ public class PlayerMove : MonoBehaviour {
 				}
 				if (other.gameObject.tag == "Test2") 
 				{
-					if(current < .7 || current > 1)
+					if(current >= .8 || current <= .4)
 					{
 						LoseScreen.gameObject.SetActive (true);
 						Level.gameObject.SetActive (false);
@@ -268,49 +298,90 @@ public class PlayerMove : MonoBehaviour {
 				}
 				if (other.gameObject.tag == "Test3") 
 				{
-					if(current < .2 || current > .5)
+					if(current <= .2 || current >= .6)
 					{
 						LoseScreen.gameObject.SetActive (true);
 						Level.gameObject.SetActive (false);
 					}
 				}
+						/************************************************* END OF HARD CODE SECTION, ALL MUST ADAPT TO LEVEL ************************************************/
+				/* Display "Player" current and voltage on appropriate GUIText when this trigger is reached */
+		if(other.gameObject.tag == "A/V1")
+			{
+			AV1.text = "Current: " + current +"\nVoltage: " + voltage;
+			}
+		if(other.gameObject.tag == "A/V2")
+		{
+			AV2.text = "Current: " + current +"\nVoltage: " + voltage;
+		}
+		if(other.gameObject.tag == "A/V3")
+		{
+			AV3.text = "Current: " + current +"\nVoltage: " + voltage;
+		}
 
-			
+			/********************************************** Sort of Hard Coded May need to Adjust ************************************/
+				/* Repeatedly Spawn "Players" when this trigger is reached */
 		if (other.gameObject.tag == "Split") {
 	//		Instantiate (gameObject );
 
 			Vector3 offset = new Vector3 (0,0,5);
 			Vector3 rotate = new Vector3(0,0,0);
 		//	Instantiate (P1);
-
-			//clone = Instantiate(P1 , transform.position + offset,  transform.rotation) as Rigidbody;
-			movement = new Vector3 (100, 0, 100);
-
-	//		clone.rigidbody.AddForce (movement * speed * Time.deltaTime); 
-	//		clone.velocity = transform.TransformDirection(Vector3.back * 10);
-			movement = new Vector3 (-100, 0, -100);
-			rigidbody.AddForce (movement * speed * Time.deltaTime);
+		
+			Rigidbody clone;
+			clone = Instantiate(gameObject , transform.position + offset, transform.rotation) as Rigidbody;
+			clone.velocity = transform.TransformDirection(Vector3.forward * 10);
+	//		movement = new Vector3 (-100, 0, -100);
+	//		rigidbody.AddForce (movement * speed * Time.deltaTime);
+			/*
 			other.gameObject.SetActive (false);
 			if (gameObject.tag == "Later") {
 				gameObject.SetActive (false);
+			}*/
+		}
+						/****************************************************** HARD CODED *********************************************/
+		if( other.gameObject.tag == "S_EB")
+		{
+			int temp = ((stringtoint (counter.text)));
+			temp++;
+			counter.text = temp.ToString ();
+
+			if(temp <= ratio)
+			{
+				movement = new Vector3 (-100, 0, -100);
+				rigidbody.AddForce (movement * speed * Time.deltaTime);
 			}
+			if(temp >= 10)
+			{
+				counter.text = "0";
+			}
+
 		}
 		
 		
 		
 	}
-	//Unique to each circuit
+
+					/********************************************************* HARD CODED *************************************************************/
+	/* Unique to each circuit, evaluates current */
 	void evalcurrent()
 	{
-	//	voltage = 5000;
-	
-		R1 = stringtoint (Spot1.gameObject.name);
-		R2 = stringtoint (Spot2.gameObject.name);
-		R3 = stringtoint (Spot3.gameObject.name);
-	//	R4 = stringtoint (Spot4.gameObject.name);
+			/* For Level 1, use this to get current */
+		if(Island.text == "Island1")
+		{
+			R1 = stringtoint (Spot1.gameObject.name);
+			R2 = stringtoint (Spot2.gameObject.name);
+			R3 = stringtoint (Spot3.gameObject.name);
 
-		current = voltage / ( R1 + (R2*R3)/(R2 + R3) );
-		Button.text = current.ToString ();
+
+			current = voltage / ( R1 + (R2*R3)/(R2 + R3) );
+
+		}
+			/* For Level 2, do this for current */
+		if(Island.text == "Island2")
+		{
+
+		}
 	}
 	
 	void FixedUpdate()
@@ -320,30 +391,28 @@ public class PlayerMove : MonoBehaviour {
 			if(!started)
 			{
 				evalcurrent ();
-				PlayerInfo.text = "Voltage: " + voltage + "\n Current: " + current;
+		
 				started = true;
-				movement = new Vector3 (00, 0, -100);
+						/* Always starts rolling one direction, will change with curve code */
+				movement = new Vector3 (0, 0, -100);
 				rigidbody.AddForce (movement * speed * Time.deltaTime);
+
+
+		
 			}
+				/***************************************** HARD CODED *************************************************/
+			ratio = (int)((R3/(R2+R3)) * 10);
+				/*For having moving A/V meter with ball, does not work for clones so unneeded atm */
+			/*
 			PlayerInfo.text = "Voltage: " + voltage + "\n Current: " + current;
 			PlayerInfo.pixelOffset = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.z ) *10;
+			*/
+
 		}
 		
-		
-		if (health <= 0)
-		{
-			LoseScreen.gameObject.SetActive (true);
-			Level.gameObject.SetActive (false);
-		}
-		/*
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);
-
-		rigidbody.AddForce (movement * speed * Time.deltaTime);
-		*/
 	}
+		/* Read from a string to an integer */
 	int stringtoint(string a)
 	{
 		int value;

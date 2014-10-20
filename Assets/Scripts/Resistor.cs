@@ -19,7 +19,7 @@ public class Resistor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-
+			/* Write to a string, . is the end statement */
 		if(setval)
 		{
 			if(Input.GetKeyDown ("1"))
