@@ -1,12 +1,26 @@
 ﻿#pragma strict
 
 
-
+class Array3D
+{
+	var pathsplit : Array2D[];
+	var total_current : float;
+	var tempvoltage : float;
+	var tot_resist : float;
+	var mtest : float;
+}
 class Array2D {
 	var subArray : Transform[];
+	var current_ratio : float;
+	var pathresist : float;
+	var diodecount : float;
 	} 
-var myarray: Array2D[];	
 
+var tempspeed : float;
+var PathID : float;		
+var myarray: Array2D[];	
+	//Put components in spots
+var testarray: Array3D;
 //var testarray : Transform[];
 
 private var pathPoints : Transform[];
@@ -14,7 +28,7 @@ private var pathPoints : Transform[];
 
 var PlayButton : Transform;
 var ComponentList : Transform[];
-
+var Transport : Transform;
 
 private var nextWaypoint : Transform;
 var nextWPind : int;
@@ -22,14 +36,14 @@ private var currSpeed : float;
 private var currSind : int;
 private var myspeed : float;
 var voltage : float;
-var current : int;
+var current : float;
 //private var branchcount : int;
 var nextpointcheck = true;
 var indiode = false;
 var t : float;
 var startpos : Vector3;
 var rotoffset : Vector3;
-var counter : GUIText;
+//var counter : GUIText;
 
 
 
@@ -37,14 +51,15 @@ function Start ()
 {
 	nextpointcheck = true;
 	pathPoints = myarray[0].subArray;
-	myspeed = 10;
+	myspeed = 250;
 	currSind = 0;
 //	currSpeed = pathSpeeds[0];
 	nextWPind = 1;
 	nextWaypoint = pathPoints[1];
 	current = 1;
-	voltage = 10;
+	voltage = 50;
 	startpos = transform.position;
+	PathID = 0;
 	
 //	branchcount = 0;
 }
@@ -66,6 +81,151 @@ function Update () {
 		/* Use this Section to check for Meters resistors switches etc */
 		//nextWPind = Mathf.RoundToInt( pathPoints[nextWPind-1].transform.rotation.x);
 		
+		
+		/*******************************NEW TEST CODE SECTION **************************************/
+	var i : float;
+	var j : float;
+	var tempvoltage : float;	
+	var branches : float;
+	branches = testarray.pathsplit.Length;
+	var totresist : float;
+	var curr_resist : float;
+
+	
+	curr_resist = 0;
+
+	i = 0;
+	j = 0;	
+	testarray.mtest = testarray.pathsplit.Length;
+			//HOPEFULLY CALCULATE FOR EACH PATH
+	for(;;)
+	{
+		if( i >= testarray.pathsplit.Length)
+			break;
+		testarray.pathsplit[i].pathresist = 0;	
+		testarray.pathsplit[i].diodecount = 0;
+		for(;;)
+		{
+			curr_resist = 0;
+			if( j >= testarray.pathsplit[i].subArray.Length)
+				break;	
+				//FIND OUT RESISTANCE
+			if(testarray.pathsplit[i].subArray[j].tag == "Resistor")
+			{
+				curr_resist = 25;
+				
+			}
+			if(testarray.pathsplit[i].subArray[j].tag == "DStop")
+			{
+				if(testarray.pathsplit[i].subArray[j-1].tag == "DStart")
+				{
+					testarray.pathsplit[i].diodecount++;
+
+				}
+				else	
+				{
+
+					testarray.pathsplit[i].pathresist = -1;
+					break;
+					
+				}
+			}
+			if(testarray.pathsplit[i].subArray[j].tag == "SwitchOff")
+			{
+				testarray.pathsplit[i].pathresist = -1;
+
+				break;
+			
+			}	
+		
+			testarray.pathsplit[i].pathresist += curr_resist;
+				
+			j++;	
+		}
+		i++;
+	}
+			/********************************PARALLEL WORK *******************************************/
+	curr_resist = 0;		
+		//FIND CURRENT RATIO
+	if(testarray.pathsplit.Length > 1)	
+	{
+		i = 1;	
+		totresist = 0;
+		
+		for(;;)
+		{
+			if(i >= testarray.pathsplit.Length)
+				break;
+			if(testarray.pathsplit[i].pathresist >= 0)	
+				totresist += testarray.pathsplit[i].pathresist;	
+			i++;		
+		}
+		i = 1;	
+		curr_resist = 1/totresist;
+	}
+		//FINDING EQUIVALENT RESISTENCE
+	for(;;)
+	{
+		if(i >= testarray.pathsplit.Length)
+			break;
+		curr_resist = curr_resist * testarray.pathsplit[i].pathresist;	
+		i++;	
+	}
+	if(testarray.pathsplit.Length > 1)	
+	{
+		i = 1;
+				//FOUND EQUIVALENT RESISTENCE, GETTING CURRENT OF PATH
+		for(;;)
+		{
+			if(i >= testarray.pathsplit.Length)
+				break;
+			if(testarray.pathsplit[i].pathresist == 0)
+			{
+				testarray.pathsplit[i].current_ratio = 1;
+				
+			}
+			else if(testarray.pathsplit[i].pathresist == -1)
+			{
+				testarray.pathsplit[i].current_ratio = 0;
+				
+			}
+			else	
+				testarray.pathsplit[i].current_ratio = curr_resist / testarray.pathsplit[i].pathresist;	
+				
+			i++;			
+		}
+	}
+	
+			//PICK PATH HERE
+	if(testarray.pathsplit.Length > 1)
+	{
+		PathID = 1;
+		pathPoints = myarray[PathID].subArray;
+	}		
+		/**************************************************************END PARALLEL WORK **********************************/
+			//FIND CURRENT OF PATH HERE	
+	if(	testarray.pathsplit[0].pathresist > 0)
+	{
+		testarray.tot_resist = curr_resist + testarray.pathsplit[0].pathresist;	
+		if(testarray.pathsplit.Length > 1)
+			testarray.tempvoltage = voltage - testarray.pathsplit[0].diodecount*.7 - testarray.pathsplit[PathID].diodecount*.7; 
+		else
+			testarray.tempvoltage = voltage - testarray.pathsplit[0].diodecount*.7;	
+		current = testarray.tempvoltage / testarray.tot_resist ;
+	}
+	else 
+	{
+		testarray.tot_resist = 0;
+		current = 0;	
+		testarray.tempvoltage = voltage - testarray.pathsplit[0].diodecount*.7 - testarray.pathsplit[PathID].diodecount*.7; 
+	
+	}
+	testarray.total_current = current;		
+					
+		/************************************ END TEST CODE SECTION ****************************************/
+		
+	if(Transport.gameObject.activeSelf)
+		Transport.gameObject.transform.position = transform.position;	
 	if(nextpointcheck)
 	{
 		nextpointcheck = false;
@@ -74,6 +234,54 @@ function Update () {
 			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
 			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
 			myspeed -= 4;
+//			pathSpeeds[2] = 1000;
+		}
+		if(pathPoints[nextWPind-1].tag == "50Ohms")
+		{
+			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
+			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
+			myspeed -= 50;
+//			pathSpeeds[2] = 1000;
+		}
+		if(pathPoints[nextWPind-1].tag == "100Ohms")
+		{
+			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
+			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
+			myspeed -= 100;
+//			pathSpeeds[2] = 1000;
+		}
+		if(pathPoints[nextWPind-1].tag == "Split")
+		{
+			current = current * testarray.pathsplit[PathID].current_ratio;
+		}
+		if(pathPoints[nextWPind-1].tag == "UnSplit")
+		{
+			current = testarray.total_current;
+		}
+	
+		if(pathPoints[nextWPind-1].tag == "Transport")
+		{
+			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
+			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
+			tempspeed = myspeed;
+			Transport.gameObject.SetActive(true);
+			myspeed = 1000;
+//			pathSpeeds[2] = 1000;
+		}
+		if(pathPoints[nextWPind-1].tag == "EndTransport")
+		{
+			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
+			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
+			myspeed = 50;
+			Transport.gameObject.SetActive(true);
+
+//			pathSpeeds[2] = 1000;
+		}
+		if(pathPoints[nextWPind-1].tag == "200Ohms")
+		{
+			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
+			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
+			myspeed -= 200;
 //			pathSpeeds[2] = 1000;
 		}
 		else if(pathPoints[nextWPind-1].tag == "END")
@@ -124,7 +332,7 @@ function Update () {
 		
 			Instantiate (gameObject, startpos, Quaternion.identity);
 			
-			if(counter.text == "a")
+			/*if(counter.text == "a")
 			{
 				pathPoints = myarray[1].subArray;
 				counter.text = "b";
@@ -133,7 +341,7 @@ function Update () {
 			{
 				pathPoints = myarray[0].subArray;
 				counter.text = "a";
-			}
+			}*/
 			nextWaypoint = pathPoints[nextWPind];
 			
 			
@@ -147,7 +355,7 @@ function Update () {
 	
 	if( PlayButton.gameObject.activeSelf == false)
 	{
-		if( Vector3.Distance( nextWaypoint.transform.position, transform.position ) < 0.4 )
+		if( Vector3.Distance( nextWaypoint.transform.position, transform.position ) < 50 )
 		{
 			
 		//	nextWPind = Mathf.RoundToInt(pathPoints[nextWPind].transform.rotation.x) ;
