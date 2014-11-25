@@ -1,11 +1,17 @@
 ﻿#pragma strict
 
 
-var pointB : Vector3;
+
 
 function Start () 
 { 
+var pointB : Vector3;
+
 var pointA = transform.position; 
+pointB.x = pointA.x+0.015;
+pointB.y = pointA.y+0.01;
+pointB.z = pointA.z;
+
 while (true) { 
 	yield MoveObject(transform, pointA, pointB, 0.5); 
 	yield MoveObject(transform, pointB, pointA, 0.5); 
