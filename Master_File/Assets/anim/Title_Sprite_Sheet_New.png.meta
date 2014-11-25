@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 363f29d9fd2e41b47afb2965c4b7426b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Title_Sprite_Sheet_New_0
+    21300002: Title_Sprite_Sheet_New_1
+    21300004: Title_Sprite_Sheet_New_2
+    21300006: Title_Sprite_Sheet_New_3
+    21300008: Title_Sprite_Sheet_New_4
+    21300010: Title_Sprite_Sheet_New_5
+    21300012: Title_Sprite_Sheet_New_6
+    21300014: Title_Sprite_Sheet_New_7
+    21300016: Title_Sprite_Sheet_New_8
+    21300018: Title_Sprite_Sheet_New_9
+    21300020: Title_Sprite_Sheet_New_10
+    21300022: Title_Sprite_Sheet_New_11
+    21300024: Title_Sprite_Sheet_New_12
+    21300026: Title_Sprite_Sheet_New_13
+    21300028: Title_Sprite_Sheet_New_14
+    21300030: Title_Sprite_Sheet_New_15
+    21300032: Title_Sprite_Sheet_New_16
+    21300034: Title_Sprite_Sheet_New_17
+    21300036: Title_Sprite_Sheet_New_18
+    21300038: Title_Sprite_Sheet_New_19
+    21300040: Title_Sprite_Sheet_New_20
+    21300042: Title_Sprite_Sheet_New_21
+    21300044: Title_Sprite_Sheet_New_22
+    21300046: Title_Sprite_Sheet_New_23
+    21300048: Title_Sprite_Sheet_New_24
+    21300050: Title_Sprite_Sheet_New_25
+    21300052: Title_Sprite_Sheet_New_26
+    21300054: Title_Sprite_Sheet_New_27
+    21300056: Title_Sprite_Sheet_New_28
+    21300058: Title_Sprite_Sheet_New_29
+    21300060: Title_Sprite_Sheet_New_30
+    21300062: Title_Sprite_Sheet_New_31
+    21300064: Title_Sprite_Sheet_New_32
+    21300066: Title_Sprite_Sheet_New_33
+    21300068: Title_Sprite_Sheet_New_34
+    21300070: Title_Sprite_Sheet_New_35
+    21300072: Title_Sprite_Sheet_New_36
+    21300074: Title_Sprite_Sheet_New_37
+    21300076: Title_Sprite_Sheet_New_38
+    21300078: Title_Sprite_Sheet_New_39
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1000
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Title_Sprite_Sheet_New_0
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 2800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_2
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 2800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_3
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 2800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_4
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 2800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 2400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_7
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 2400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_8
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 2400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_9
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 2400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 2000
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_11
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2000
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_12
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 2000
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_13
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 2000
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_14
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 2000
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_15
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1600
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_16
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1600
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_17
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1600
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_18
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 1600
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_19
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 1600
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_20
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1200
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_21
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1200
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_22
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1200
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_23
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 1200
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_24
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 1200
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_25
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_26
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_27
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_28
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_29
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 800
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_30
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_31
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_32
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_33
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_34
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 400
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_35
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_36
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_37
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 0
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_38
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 0
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Title_Sprite_Sheet_New_39
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 0
+        width: 680
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
