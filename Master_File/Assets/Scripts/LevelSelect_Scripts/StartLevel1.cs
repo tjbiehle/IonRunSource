@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartLevelOne : MonoBehaviour {
+public class StartLevel1 : MonoBehaviour {
 
 	void OnMouseDown() {
 		Application.LoadLevel ("openingCutScene");
