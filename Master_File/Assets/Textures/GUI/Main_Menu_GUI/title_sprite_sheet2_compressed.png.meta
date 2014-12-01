@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: f0898c02ee7370b49a3dffcf89368164
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: title_sprite_sheet2_compressed_0
+    21300002: title_sprite_sheet2_compressed_1
+    21300004: title_sprite_sheet2_compressed_2
+    21300006: title_sprite_sheet2_compressed_3
+    21300008: title_sprite_sheet2_compressed_4
+    21300010: title_sprite_sheet2_compressed_5
+    21300012: title_sprite_sheet2_compressed_6
+    21300014: title_sprite_sheet2_compressed_7
+    21300016: title_sprite_sheet2_compressed_8
+    21300018: title_sprite_sheet2_compressed_9
+    21300020: title_sprite_sheet2_compressed_10
+    21300022: title_sprite_sheet2_compressed_11
+    21300024: title_sprite_sheet2_compressed_12
+    21300026: title_sprite_sheet2_compressed_13
+    21300028: title_sprite_sheet2_compressed_14
+    21300030: title_sprite_sheet2_compressed_15
+    21300032: title_sprite_sheet2_compressed_16
+    21300034: title_sprite_sheet2_compressed_17
+    21300036: title_sprite_sheet2_compressed_18
+    21300038: title_sprite_sheet2_compressed_19
+    21300040: title_sprite_sheet2_compressed_20
+    21300042: title_sprite_sheet2_compressed_21
+    21300044: title_sprite_sheet2_compressed_22
+    21300046: title_sprite_sheet2_compressed_23
+    21300048: title_sprite_sheet2_compressed_24
+    21300050: title_sprite_sheet2_compressed_25
+    21300052: title_sprite_sheet2_compressed_26
+    21300054: title_sprite_sheet2_compressed_27
+    21300056: title_sprite_sheet2_compressed_28
+    21300058: title_sprite_sheet2_compressed_29
+    21300060: title_sprite_sheet2_compressed_30
+    21300062: title_sprite_sheet2_compressed_31
+    21300064: title_sprite_sheet2_compressed_32
+    21300066: title_sprite_sheet2_compressed_33
+    21300068: title_sprite_sheet2_compressed_34
+    21300070: title_sprite_sheet2_compressed_35
+    21300072: title_sprite_sheet2_compressed_36
+    21300074: title_sprite_sheet2_compressed_37
+    21300076: title_sprite_sheet2_compressed_38
+    21300078: title_sprite_sheet2_compressed_39
+    21300080: title_sprite_sheet2_compressed_40
+    21300082: title_sprite_sheet2_compressed_41
+    21300084: title_sprite_sheet2_compressed_42
+    21300086: title_sprite_sheet2_compressed_43
+    21300088: title_sprite_sheet2_compressed_44
+    21300090: title_sprite_sheet2_compressed_45
+    21300092: title_sprite_sheet2_compressed_46
+    21300094: title_sprite_sheet2_compressed_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1000
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: title_sprite_sheet2_compressed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6336
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6336
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 6336
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 6336
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5760
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5760
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 5760
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_7
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 5760
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5184
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5184
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 5184
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_11
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 5184
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4608
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_13
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4608
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_14
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4608
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_15
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4608
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4032
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_17
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4032
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_18
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4032
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_19
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4032
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3456
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_21
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3456
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_22
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3456
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_23
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3456
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_25
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2880
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_26
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2880
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_27
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2880
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2304
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2304
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_30
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2304
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_31
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2304
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1728
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_33
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1728
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_34
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1728
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_35
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1728
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_37
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1152
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_38
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1152
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_39
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1152
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_41
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 576
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_42
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 576
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_43
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 576
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_45
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_46
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_sprite_sheet2_compressed_47
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
