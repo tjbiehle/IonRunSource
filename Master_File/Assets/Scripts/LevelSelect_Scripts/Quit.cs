@@ -1,36 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartLevel2 : MonoBehaviour {
-	
+public class Quit : MonoBehaviour {
+
 	public Texture hover;
 	public Texture no_hover;
 	public Texture click;
-	public Texture locked;
-
-	bool isLocked;
 	
 	void Start() {
-		this.guiTexture.texture = locked;
-		isLocked = true;
+		this.guiTexture.texture = no_hover;
 	}
-	
+
 	void OnMouseDown() {
-		if (!isLocked) {
 		this.guiTexture.texture = click;
-		Application.LoadLevel ("test city scene2");
-		}
+		Application.Quit ();
 	}
-	
+
 	void OnMouseEnter() {
-		if (!isLocked) {
 		this.guiTexture.texture = hover;
-		}
 	}
 	
 	void OnMouseExit() {
-		if (!isLocked) {
 		this.guiTexture.texture = no_hover;
-		}
 	}
 }

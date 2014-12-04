@@ -13,7 +13,7 @@ public class ShowLevelSelectScene : MonoBehaviour {
 
 	void OnMouseDown() {
 		this.guiTexture.texture = click;
-		Application.LoadLevel ("Levels");
+		Application.LoadLevel ("LevelSelect");
 }
 
 	void OnMouseEnter() {
