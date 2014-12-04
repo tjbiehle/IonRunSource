@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour {
 			{
 				//guiTexture.texture = act;
 				Vector3 newY = toMove.transform.position;
-				newY.y -= 0.52f;//Time.deltaTime * 100;
+				newY.y += 0.41f;//Time.deltaTime * 100;
 				toMove.transform.position = newY;
 				moved = !moved;
 			} 
@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour {
 			{
 				//guiTexture.texture = inact;
 				Vector3 newY = toMove.transform.position;
-				newY.y += 0.52f;//Time.deltaTime * 100;
+				newY.y -= 0.41f;//Time.deltaTime * 100;
 				toMove.transform.position = newY;
 				moved = !moved;
 			}
