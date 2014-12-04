@@ -7,12 +7,20 @@ IonRunSource
 
 INSTRUCTIONS FOR COMMITING CHANGES TO GITHUB:
 
-1) Open Git Shell\n
-2) Browse to the repo you are working in\n
-> cd path/to/IonRunSource/\n
-> git add .\n
-> git stash\n
-> git pull --rebase\n
-> git stash pop\n
-> git commit -m "type your commit message"\n
-> git push origin\n
+1) Open Git Shell
+
+2) Browse to the repo you are working in...
+
+> cd path/to/IonRunSource/
+
+> git add .
+
+> git stash
+
+> git pull --rebase
+
+> git stash pop
+
+> git commit -m "type your commit message"
+
+> git push origin
