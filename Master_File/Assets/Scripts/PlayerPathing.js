@@ -48,14 +48,23 @@ private var awesomeness;
 private var direction : Vector3;
 //var counter : GUIText;
 
+var isWin;
+var winGUI : GameObject;
+var loseGUI : GameObject;
+var lessResGUI : GameObject;
+var moreResGUI : GameObject;
+var hSliderValue : float = 1.0f;
+
+
 
 
 function Start () 
 {
+	isWin = true;
 	nextpointcheck = true;
 	pathPoints = myarray[0].subArray;
-//	myspeed = 5;
-	currSind = 0;
+	myspeed = 5;
+	currSind = 5;
 //	currSpeed = pathSpeeds[0];
 	nextWPind = 1;
 	nextWaypoint = pathPoints[1];
@@ -89,7 +98,7 @@ if( !PlayButton.gameObject.activeSelf)
 	if(!pathsel)
 {	
 	
-	myspeed = voltage + 1; 
+	//myspeed = voltage + 1; 
 	
 	pathsel = true;
 		/*******************************NEW TEST CODE SECTION, PLACE IN GIANT IF STATEMENT LATER IF NO CHANGES DURING RUN **************************************/
@@ -288,7 +297,9 @@ if( !PlayButton.gameObject.activeSelf)
 		{
 			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
 			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
-			myspeed -= parseInt(pathPoints[nextWPind-1].name)*current;
+			//myspeed -= parseInt(pathPoints[nextWPind-1].name)*current;
+			//myspeed -= 100;
+			myspeed = myspeed / 2;
 		//	voltage -= parseInt(pathPoints[nextWPind-1].name)*current;
 //			pathSpeeds[2] = 1000;
 		}
@@ -296,14 +307,16 @@ if( !PlayButton.gameObject.activeSelf)
 		{
 			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
 			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
-			myspeed -= 50;
+			//myspeed -= 50;
+			myspeed = myspeed / 2;
 //			pathSpeeds[2] = 1000;
 		}
 		if(pathPoints[nextWPind-1].tag == "100Ohms")
 		{
 			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
 			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
-			myspeed -= 100;
+			//myspeed -= 100;
+			myspeed = myspeed / 4;
 //			pathSpeeds[2] = 1000;
 		}
 		if(pathPoints[nextWPind-1].tag == "Split")
@@ -337,7 +350,8 @@ if( !PlayButton.gameObject.activeSelf)
 		{
 			//pathPoints[nextWPind-1].tag = "Meter";		Useful for click codes to alternate between diode/switch start and stop, Either that or somehow have 2 waypoints and check tag for diode / switch
 			//Maybe turn pathpoint name into its resistor value, then travel through all resistors evaluating?
-			myspeed -= 200;
+			//myspeed -= 200;
+			myspeed = myspeed / 8;
 //			pathSpeeds[2] = 1000;
 		}
 		else if(pathPoints[nextWPind-1].tag == "END")
@@ -382,7 +396,45 @@ if( !PlayButton.gameObject.activeSelf)
 			pathPoints = temp;
 			*/
 
-		}	//THEY DID NOT PICK COMPONENT
+		}
+		else if(pathPoints[nextWPind-1].tag == "Ampmeter")
+        {
+            /*
+                //ALSO HAVE TO CHANGE CURRENT, NEED A GLOBAL TO KEEP TRACK OF WHICH ONES SHIFT
+                var temp = new Transform[pathPoints.Length - 3];
+                for(var i = 0; i < pathPoints.Length - 3; i++)
+                {
+                    temp[i] = pathPoints[i];
+                }
+                pathPoints = temp;
+                */
+                // if (myspeed > 0 && myspeed < 10000)
+            //if (myspeed == 300)
+          
+          // temporary testing
+		if (myspeed > 0) {
+                ///winGUI.SetActive(true);
+                isWin = true;
+                winGUI.SetActive(true);
+            }
+            /*else if (myspeed > 300 && myspeed < 500)
+            {
+            	moreResGUI.SetActive(true);
+            }
+            else if (myspeed < 300 && myspeed > 0)
+            {
+            	lessResGUI.SetActive(true);
+            }*/
+            
+            
+            //else
+            //{
+            //    isWin = false;      // probably redundent
+                //loseGUI.SetActive(true);
+           // }
+
+        }
+				//THEY DID NOT PICK COMPONENT
 		else if(pathPoints[nextWPind-1].tag == "Component")
 		{
 			Destroy( gameObject);
@@ -398,7 +450,8 @@ if( !PlayButton.gameObject.activeSelf)
 	//		nextWaypoint = pathPoints[nextWPind];
 	//		direction = nextWaypoint.transform.position - transform.position;
 			
-			Instantiate (gameObject, startpos, awesomeness);
+			//Instantiate (gameObject, startpos, awesomeness);
+			Instantiate (gameObject, startpos, Quaternion.identity);
 			
 	//		nextWPind = temp;
 			/*if(counter.text == "a")
@@ -411,7 +464,7 @@ if( !PlayButton.gameObject.activeSelf)
 				pathPoints = myarray[0].subArray;
 				counter.text = "a";
 			}*/
-	//		nextWaypoint = pathPoints[nextWPind];
+			nextWaypoint = pathPoints[nextWPind];
 
 	//		direction = nextWaypoint.transform.position - transform.position;
 			
