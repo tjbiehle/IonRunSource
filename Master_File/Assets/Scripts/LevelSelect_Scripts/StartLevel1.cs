@@ -17,7 +17,7 @@ public class StartLevel1 : MonoBehaviour {
 	
 	void OnMouseDown() {
 		this.guiTexture.texture = click;
-		Application.LoadLevel ("Canyon_Level");
+		Application.LoadLevel ("openingCutScene");
 	}
 	
 	void OnMouseEnter() {

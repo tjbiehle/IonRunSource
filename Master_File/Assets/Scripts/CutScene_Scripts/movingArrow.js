@@ -8,8 +8,8 @@ function Start ()
 var pointB : Vector3;
 
 var pointA = transform.position; 
-pointB.x = pointA.x+0.015;
-pointB.y = pointA.y+0.01;
+pointB.x = pointA.x-0.015;
+pointB.y = pointA.y-0.01;
 pointB.z = pointA.z;
 
 while (true) { 
